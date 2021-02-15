@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FC54B2225D9BC1E00616D68 /* ResController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC54B2125D9BC1E00616D68 /* ResController.swift */; };
+		1FC54B2725D9C12400616D68 /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC54B2625D9C12400616D68 /* Sum.swift */; };
 		1FC7AD8625D557AD00266123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7AD8525D557AD00266123 /* AppDelegate.swift */; };
 		1FC7AD8825D557AD00266123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7AD8725D557AD00266123 /* SceneDelegate.swift */; };
 		1FC7AD8A25D557AD00266123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7AD8925D557AD00266123 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FC54B2125D9BC1E00616D68 /* ResController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResController.swift; sourceTree = "<group>"; };
+		1FC54B2625D9C12400616D68 /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
 		1FC7AD8225D557AD00266123 /* studyproject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studyproject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC7AD8525D557AD00266123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC7AD8725D557AD00266123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,11 +105,13 @@
 			children = (
 				1FC7AD8525D557AD00266123 /* AppDelegate.swift */,
 				1FC7AD8725D557AD00266123 /* SceneDelegate.swift */,
+				1FC54B2625D9C12400616D68 /* Sum.swift */,
 				1FC7AD8925D557AD00266123 /* ViewController.swift */,
 				1FC7AD8B25D557AD00266123 /* Main.storyboard */,
 				1FC7AD8E25D557AF00266123 /* Assets.xcassets */,
 				1FC7AD9025D557AF00266123 /* LaunchScreen.storyboard */,
 				1FC7AD9325D557AF00266123 /* Info.plist */,
+				1FC54B2125D9BC1E00616D68 /* ResController.swift */,
 			);
 			path = studyproject1;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC54B2725D9C12400616D68 /* Sum.swift in Sources */,
+				1FC54B2225D9BC1E00616D68 /* ResController.swift in Sources */,
 				1FC7AD8A25D557AD00266123 /* ViewController.swift in Sources */,
 				1FC7AD8625D557AD00266123 /* AppDelegate.swift in Sources */,
 				1FC7AD8825D557AD00266123 /* SceneDelegate.swift in Sources */,

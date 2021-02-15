@@ -17,14 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите числа через пробел" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-Ut-1ii">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-Ut-1ii">
                                 <rect key="frame" x="20" y="441" width="388" height="45.666666666666664"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gyH-Y7-kac"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Введите числа" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G2-Xd-u4y">
                                 <rect key="frame" x="96" y="297" width="239" height="40"/>
@@ -44,8 +41,7 @@
                                     <color key="titleShadowColor" name="AccentColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wOW-NF-O2V"/>
-                                    <action selector="showRes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1m-jc-YTS"/>
+                                    <action selector="showRes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yci-FN-Btd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,43 +49,45 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="2G2-Xd-u4y" id="JlO-fy-91Z"/>
-                        <outlet property="textField" destination="2EY-Ut-1ii" id="oEr-fK-o8f"/>
-                        <outlet property="textfield" destination="2EY-Ut-1ii" id="9Yq-LT-rKZ"/>
-                        <segue destination="Kos-1W-lDP" kind="show" identifier="showsum" id="IKw-Gb-ZR2"/>
+                        <outlet property="label" destination="2G2-Xd-u4y" id="hHr-n7-4UG"/>
+                        <outlet property="textField" destination="2EY-Ut-1ii" id="X66-Td-LbR"/>
+                        <segue destination="5Lf-eF-Bbo" kind="show" identifier="showsum" id="KUT-5c-juK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="94"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Cyt-1L-k0P">
+        <!--Res Controller-->
+        <scene sceneID="I80-tZ-bKk">
             <objects>
-                <viewController id="Kos-1W-lDP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X8v-c9-us6">
+                <viewController id="5Lf-eF-Bbo" customClass="ResController" customModule="studyproject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fA1-vW-vLS">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-t3-Uzb">
-                                <rect key="frame" x="90" y="441" width="249" height="44"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SUM_TEXT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzx-8w-r2M">
+                                <rect key="frame" x="109" y="439" width="211" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="13R-J4-288"/>
+                        <viewLayoutGuide key="safeArea" id="gWE-tb-6FE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JKQ-t3-Uzb" firstAttribute="centerX" secondItem="13R-J4-288" secondAttribute="centerX" id="FDw-9f-qKZ"/>
-                            <constraint firstItem="JKQ-t3-Uzb" firstAttribute="centerY" secondItem="13R-J4-288" secondAttribute="centerY" id="dWq-wI-biy"/>
+                            <constraint firstItem="wzx-8w-r2M" firstAttribute="centerY" secondItem="gWE-tb-6FE" secondAttribute="centerY" id="6wL-DX-ZAu"/>
+                            <constraint firstItem="wzx-8w-r2M" firstAttribute="centerX" secondItem="gWE-tb-6FE" secondAttribute="centerX" id="NaR-uM-3my"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UDQ-m2-pQE"/>
+                    <navigationItem key="navigationItem" id="YwL-vo-g2d"/>
+                    <connections>
+                        <outlet property="res_label" destination="wzx-8w-r2M" id="4E5-a5-qgC"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UOQ-Hu-JQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzQ-Eh-3pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958.87850467289718" y="93.952483801295898"/>
+            <point key="canvasLocation" x="1072" y="94"/>
         </scene>
     </scenes>
     <resources>
