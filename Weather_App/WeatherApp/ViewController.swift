@@ -22,7 +22,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Register 2 cells
         table.register(HourlyTableViewCell.nib(), forCellReuseIdentifier: HourlyTableViewCell.identifier)
         table.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
 
@@ -46,7 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         locationManager.startUpdatingLocation()
     }
 
-    // Permission
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !locations.isEmpty, currentLocation == nil  {
             currentLocation = locations.first
@@ -64,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let long = currentLocation.coordinate.longitude
         let lat = currentLocation.coordinate.latitude
 
+        // Applying coordinates to make API-request
         let url = "https://api.darksky.net/forecast/ddcc4ebb2a7c9930b90d9e59bda0ba7a/\(lat),\(long)?exclude=[flags,minutely]"
         print(url)
 
@@ -75,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
 
-            // Convert data to object
+            // Decoding JSON
             var json: WeatherResponse?
             do {
                 json = try JSONDecoder().decode(WeatherResponse.self, from: data)
@@ -98,7 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
             self.hourlyModels = result.hourly.data
 
-            // Updating interface
+            // Updating interface according to received information
             DispatchQueue.main.async {
                 self.table.reloadData()
 
@@ -107,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }).resume()
     }
 
-   
+   // Working with interface
     func createTableHeader() -> UIView {
         let headerVIew = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
 
@@ -139,7 +138,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return headerVIew
     }
 
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -149,7 +147,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // 1 cell that is collectiontableviewcell
             return 1
         }
-        // return models count
         return models.count
     }
 
@@ -161,7 +158,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         }
 
-        // Continue
         let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
         cell.configure(with: models[indexPath.row])
         cell.backgroundColor = UIColor(red: 232/255.0, green: 237/255.0, blue: 255/255.0, alpha: 1.0)
@@ -173,6 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
+// Structs to store data, only those variables that we need
 struct WeatherResponse: Codable {
     let latitude: Float
     let longitude: Float
@@ -187,22 +184,7 @@ struct CurrentWeather: Codable {
     let time: Int
     let summary: String
     let icon: String
-//    let nearestStormDistance: Int // No data about it
-//    let nearestStormBearing: Int // No data about it
-    let precipIntensity: Int
-    let precipProbability: Int
     let temperature: Double
-    let apparentTemperature: Double
-    let dewPoint: Double
-    let humidity: Double
-    let pressure: Double
-    let windSpeed: Double
-    let windGust: Double
-    let windBearing: Int
-    let cloudCover: Double
-    let uvIndex: Int
-    let visibility: Double
-    let ozone: Double
 }
 
 struct DailyWeather: Codable {
@@ -215,42 +197,8 @@ struct DailyWeatherEntry: Codable {
     let time: Int
     let summary: String
     let icon: String
-    let sunriseTime: Int
-    let sunsetTime: Int
-    let moonPhase: Double
-    let precipIntensity: Float
-    let precipIntensityMax: Float
-    let precipIntensityMaxTime: Int
-    let precipProbability: Double
-    let precipType: String?
-    let temperatureHigh: Double
-    let temperatureHighTime: Int
-    let temperatureLow: Double
-    let temperatureLowTime: Int
-    let apparentTemperatureHigh: Double
-    let apparentTemperatureHighTime: Int
-    let apparentTemperatureLow: Double
-    let apparentTemperatureLowTime: Int
-    let dewPoint: Double
-    let humidity: Double
-    let pressure: Double
-    let windSpeed: Double
-    let windGust: Double
-    let windGustTime: Int
-    let windBearing: Int
-    let cloudCover: Double
-    let uvIndex: Int
-    let uvIndexTime: Int
-    let visibility: Double
-    let ozone: Double
     let temperatureMin: Double
-    let temperatureMinTime: Int
     let temperatureMax: Double
-    let temperatureMaxTime: Int
-    let apparentTemperatureMin: Double
-    let apparentTemperatureMinTime: Int
-    let apparentTemperatureMax: Double
-    let apparentTemperatureMaxTime: Int
 }
 
 struct HourlyWeather: Codable {
@@ -263,21 +211,5 @@ struct HourlyWeatherEntry: Codable {
     let time: Int
     let summary: String
     let icon: String
-    let precipIntensity: Float
-    let precipProbability: Double
-    let precipType: String?
     let temperature: Double
-    let apparentTemperature: Double
-    let dewPoint: Double
-    let humidity: Double
-    let pressure: Double
-    let windSpeed: Double
-    let windGust: Double
-    let windBearing: Int
-    let cloudCover: Double
-    let uvIndex: Int
-    let visibility: Double
-    let ozone: Double
 }
-
-

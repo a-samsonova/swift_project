@@ -32,8 +32,8 @@ class WeatherTableViewCell: UITableViewCell {
     func configure(with model: DailyWeatherEntry) {
         self.highTempLabel.textAlignment = .center
         self.lowTempLabel.textAlignment = .center
-        self.lowTempLabel.text = String(format: "%.0f°C", (model.temperatureLow-32)*(5/9))
-        self.highTempLabel.text = String(format: "%.0f°C", (model.temperatureHigh-32)*(5/9))
+        self.lowTempLabel.text = String(format: "%.0f°C", (model.temperatureMin-32)*(5/9))
+        self.highTempLabel.text = String(format: "%.0f°C", (model.temperatureMax-32)*(5/9))
         self.dayLabel.text = getDayForDate(Date(timeIntervalSince1970: Double(model.time)))
         self.iconImageView.contentMode = .scaleAspectFit
 
@@ -58,6 +58,5 @@ class WeatherTableViewCell: UITableViewCell {
         formatter.dateFormat = "EEEE" // Day of the week
         return formatter.string(from: inputDate)
     }
-    
 }
 
